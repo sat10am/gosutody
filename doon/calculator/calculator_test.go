@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestMath(t *testing.T) {
+func TestCalculator(t *testing.T) {
 	t.Run("Test add function", func(t *testing.T) {
 		got := Add(1, 2)
 		wanted := 3
