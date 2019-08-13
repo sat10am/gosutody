@@ -22,4 +22,9 @@ func TestMath(t *testing.T) {
 		wanted := 100
 		assert.Equal(t, got, wanted)
 	})
+	t.Run("Test division function", func(t *testing.T) {
+		got := Divide(100, 10)
+		wanted := 10
+		assert.Equal(t, got, wanted)
+	})
 }
