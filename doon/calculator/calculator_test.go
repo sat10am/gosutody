@@ -17,4 +17,9 @@ func TestMath(t *testing.T) {
 		wanted := 50
 		assert.Equal(t, got, wanted)
 	})
+	t.Run("Test multiply function", func(t *testing.T) {
+		got := Multiply(10, 10)
+		wanted := 100
+		assert.Equal(t, got, wanted)
+	})
 }
