@@ -12,6 +12,6 @@ func Multiply(a int, b int) int {
 	return a * b
 }
 
-func Devide(a int, b int) int {
+func Divide(a int, b int) int {
 	return a / b
 }

@@ -34,8 +34,8 @@ func TestCalc(t *testing.T){
 		assertCorrectMessage(t, got, want)
 	})
 
-	t.Run("Devide Operator", func(t *testing.T){
-		got := Devide(6,3)
+	t.Run("Divide Operator", func(t *testing.T){
+		got := Divide(6,3)
 		want := 2
 		assertCorrectMessage(t, got, want)
 	})
