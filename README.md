@@ -9,6 +9,7 @@
 ## History
 <details>
 <summary>추가바람</summary>
+  누군가 정리 하겠지의 누구가 되어주십쇼
 </details>
 
 <details>
@@ -27,7 +28,6 @@
   
 - TDD: 0. Install / 1. Hello, world
   - GVM으로 Go 설치 (먼저 1.4 설치 후 1.12.7버전 사용)
-  - [gvm repository](https://github.com/moovweb/gvm)
   - [gvm이용하여 go설치하기](https://select995.netlify.com/go/module/gvm)
 - 다음 시간까지 숙제: TDD로 간단한 사칙연산 계산기 만들기
 
@@ -35,5 +35,6 @@
 
 ## References
 - [learn-go-with-tests](https://github.com/quii/learn-go-with-tests)
+- [gvm](https://github.com/moovweb/gvm)
 - [TDD로 Golang 시작하기 by y0c](https://y0c.github.io/2019/08/11/beginning-go/)
 - [디스커버리 Go 언어](http://www.hanbit.co.kr/store/books/look.php?p_code=B5279497767)
