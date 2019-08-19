@@ -9,7 +9,12 @@
 ## History
 <details>
 <summary>추가바람</summary>
-  누군가 정리 하겠지의 누구가 되어주십쇼
+- TDD: 6. Structs, methods & interfaces (1/2)
+  - go struct, methods
+  - go 에는 (명시적인) 메소드가 없으며, struct 는 여러 형태의 필드의 묶음일 뿐이다
+  - go struct 의 생성 방법은 여러가지가 있다. `new`, `literal struct` ...
+  - go interface 를 진행하려가다가 공부를 더 하고 진행하는 방향으로 후퇴
+- 다음 시간까지 숙제: struct, methods, interfaces 각자 정리해서 push (++ codekata 할 수 있으면 추가)
 </details>
 
 <details>
