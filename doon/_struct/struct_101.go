@@ -30,3 +30,8 @@ func (c Circle) Perimeter() float64 {
 type Shape interface {
 	Area() float64
 }
+
+type myTask = Task{
+	title: "laundry",
+	done: true,
+}
