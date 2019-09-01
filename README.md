@@ -8,11 +8,35 @@
 
 ## History
 <details>
-<summary>190821</summary>
+<summary>sample</summary>
+  
+- nil
+
 </details>
 
 <details>
-<summary>190817</summary>
+<summary>190822-5th</summary>
+  
+- TDD: 7.Pointers & errors
+  - call by value vs call by reference: 상태를 바꾸고 싶다면 pointer 사용
+  - 미리 다양한 Error 타입을 만들어 두고 사용할 수 있다
+  - Error를 체크만 하지 말고 처리하자
+  - 포인터만 nil을 가질 수 있으며, C처럼 이중 포인터 사용 가능(속도 최적화시)
+  - `_`([blank identifier](https://golang.org/doc/effective_go.html#blank))는 관습적으로 선언은 하지만 사용하지 않을 변수를 말한다. lint에서도 미사용에 대해 잡지 않음
+  
+</details>
+
+<details>
+<summary>190821-4th</summary>
+  
+- TDD: 6. Structs, methods & interfaces (2/2)
+  - byte to uint64 어쩐지 타입캐스팅 (갑분C)
+  - go polymorphism, encapsulation, pointer 조금씩 다룸
+  
+</details>
+
+<details>
+<summary>190817-3th</summary>
   
 - TDD: 6. Structs, methods & interfaces (1/2)
   - go struct, methods
@@ -24,7 +48,7 @@
 </details>
 
 <details>
-<summary>190815</summary>
+<summary>190815-2th</summary>
   
 - TDD: 3. Integers / 4. Iteration / 5. Arrays and slices
   - go Benchmark, Test coverage
@@ -35,7 +59,7 @@
 </details>
 
 <details>
-<summary>190811</summary>
+<summary>190811-1th</summary>
   
 - TDD: 0. Install / 1. Hello, world
   - GVM으로 Go 설치 (먼저 1.4 설치 후 1.12.7버전 사용)
