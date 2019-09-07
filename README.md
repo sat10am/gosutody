@@ -15,6 +15,20 @@
 </details>
 
 <details>
+<summary>190901-6th</summary>
+  
+- TDD: 8.Maps
+  - key-value 형태로 값을 저장할 수 있으며 key를 통해 빠르게 데이터 검색이 가능한 해쉬테이블
+  - value 타입은 어떤 타입이든 들어올 수 있지만 key의 타입은 Comparable 타입만 가능하다.
+  - 결과 값을 반환할 때 Error객체에 문자열을 담아 반환 할 수 있다.
+  - map은 reference 타입이기 때문에 아무리 큰 맵이라도 한번에 복사가 가능하다.
+  - map은 절대로 empty하게 초기화 하면 안된다. (make를 사용하거나 {}를 붙여 선언해야한다.)
+  - Error는 불변성과 재사용성을 위해 상수로 선언해서 사용하자.
+  - map의 delete는 내장 함수를 사용한다. 
+
+</details>
+
+<details>
 <summary>190822-5th</summary>
   
 - TDD: 7.Pointers & errors
