@@ -62,11 +62,12 @@ func NewAnswer(params ...int) *Answer {
 		numbers = strings.Join(tmp, "")
 	}
 	return &Answer{
-		Numbers:   numbers,
-		Ball:      0,
-		Strike:    0,
-		Out:       0,
-		IsCorrect: false,
+		Numbers:    numbers,
+		Ball:       0,
+		Strike:     0,
+		Out:        0,
+		IsCorrect:  false,
+		MaxRetries: 15,
 	}
 }
 
@@ -100,6 +101,7 @@ func main() {
 	tries := 0
 
 	for {
+		tries += 1
 		fmt.Print(prompt)
 		input, err := GetPlayerInput(scanner)
 		if err != nil {
@@ -114,6 +116,7 @@ func main() {
 		}
 		if answer.MaxRetries == tries {
 			fmt.Println("🐶 What a noob! The answer is ", answer.Numbers)
+			break
 		}
 	}
 }
