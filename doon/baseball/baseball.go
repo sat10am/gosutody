@@ -11,9 +11,14 @@ import (
 
 type Answer struct {
 	Numbers string
+	Input   string
 	Ball    int
 	Strike  int
 	Out     int
+}
+
+func (a *Answer) SetInput(input string) {
+	a.Input = input
 }
 
 func NewAnswer() *Answer {

@@ -60,4 +60,12 @@ func TestAnswer(t *testing.T) {
 			t.Errorf("number %s is not distict", answer.Numbers)
 		}
 	})
+
+	t.Run("set input value to answer", func(t *testing.T) {
+		want := "1234"
+		answer.SetInput(want)
+		if answer.Input != want {
+			t.Errorf("input value does not set, %s", want)
+		}
+	})
 }
