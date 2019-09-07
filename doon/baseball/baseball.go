@@ -11,11 +11,13 @@ import (
 )
 
 type Answer struct {
-	Numbers string
-	Input   string
-	Ball    int
-	Strike  int
-	Out     int
+	Numbers    string
+	Input      string
+	Ball       int
+	Strike     int
+	Out        int
+	IsCorrect  bool
+	MaxRetries int
 }
 
 func (a *Answer) SetInput(input string) {
@@ -41,7 +43,11 @@ func (a *Answer) Judge() {
 			a.Ball += 1
 		}
 	}
-	fmt.Println(a.Strike)
+	a.IsCorrect = a.Strike == 4
+}
+
+func (a *Answer) Response() {
+	fmt.Printf("%dO %dS %dB\n", a.Out, a.Strike, a.Ball)
 }
 
 func NewAnswer(params ...int) *Answer {
@@ -56,16 +62,18 @@ func NewAnswer(params ...int) *Answer {
 		numbers = strings.Join(tmp, "")
 	}
 	return &Answer{
-		Numbers: numbers,
-		Ball:    0,
-		Strike:  0,
-		Out:     0,
+		Numbers:   numbers,
+		Ball:      0,
+		Strike:    0,
+		Out:       0,
+		IsCorrect: false,
 	}
 }
 
 func GetPlayerInput(scanner *bufio.Scanner) (string, error) {
 	scanner.Scan()
 	if err := scanner.Err(); err != nil {
+		fmt.Println(err)
 		return "", err
 	}
 	return scanner.Text(), nil
@@ -85,17 +93,27 @@ func GenerateRandomNumbers() string {
 	return numbers
 }
 
-// func CheckPlyerInput(input string, answer Answer) Answer {
-// }
-
 func main() {
 	prompt := "Guess What?: "
 	scanner := bufio.NewScanner(os.Stdin)
+	answer := NewAnswer()
+	tries := 0
 
-	fmt.Print(prompt)
-	line, err := GetPlayerInput(scanner)
-	if err != nil {
-		fmt.Println("Input values are invalid")
+	for {
+		fmt.Print(prompt)
+		input, err := GetPlayerInput(scanner)
+		if err != nil {
+			break
+		}
+		answer.SetInput(input)
+		answer.Judge()
+		answer.Response()
+		if answer.IsCorrect == true {
+			fmt.Println("🎉 Congratulations 🎉")
+			break
+		}
+		if answer.MaxRetries == tries {
+			fmt.Println("🐶 What a noob! The answer is ", answer.Numbers)
+		}
 	}
-	fmt.Println(line)
 }
