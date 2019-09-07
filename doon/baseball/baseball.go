@@ -1,4 +1,4 @@
-package baseball
+package main
 
 import (
 	"bufio"
@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -21,9 +22,41 @@ func (a *Answer) SetInput(input string) {
 	a.Input = input
 }
 
-func NewAnswer() *Answer {
+func (a *Answer) initializeState() {
+	a.Ball = 0
+	a.Strike = 0
+	a.Out = 0
+}
+
+func (a *Answer) Judge() {
+	a.initializeState()
+	for index, rune_ := range a.Input {
+		key := string(rune_)
+		i := strings.Index(a.Numbers, key)
+		if i == -1 {
+			a.Out += 1
+		} else if index == i {
+			a.Strike += 1
+		} else {
+			a.Ball += 1
+		}
+	}
+	fmt.Println(a.Strike)
+}
+
+func NewAnswer(params ...int) *Answer {
+	numbers := ""
+	if len(params) != 4 {
+		numbers = GenerateRandomNumbers()
+	} else {
+		tmp := []string{}
+		for _, number := range params {
+			tmp = append(tmp, strconv.Itoa(number))
+		}
+		numbers = strings.Join(tmp, "")
+	}
 	return &Answer{
-		Numbers: GenerateRandomNumbers(),
+		Numbers: numbers,
 		Ball:    0,
 		Strike:  0,
 		Out:     0,

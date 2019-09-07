@@ -1,4 +1,4 @@
-module andare
+module github.com/sat10am/gosutody/doon
 
 go 1.12
 

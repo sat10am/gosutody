@@ -1,4 +1,4 @@
-package baseball
+package main
 
 import (
 	"errors"
@@ -41,8 +41,16 @@ func TestGenerateRandomNumber(t *testing.T) {
 }
 
 func TestAnswer(t *testing.T) {
-	answer := NewAnswer()
+	t.Run("new answer with fixed number", func(t *testing.T) {
+		want := "1234"
+		answer := NewAnswer(1, 2, 3, 4)
+		if answer.Numbers != want {
+			t.Errorf("new answer numbers %s are not equal to %s", answer.Numbers, want)
+		}
+	})
+
 	t.Run("new answer has not state", func(t *testing.T) {
+		answer := NewAnswer()
 		if answer.Ball != 0 {
 			t.Errorf("new answer's ball count must be zero, got %d", answer.Ball)
 		}
@@ -55,6 +63,7 @@ func TestAnswer(t *testing.T) {
 	})
 
 	t.Run("each of new answer's numbers are unique", func(t *testing.T) {
+		answer := NewAnswer()
 		_, err := validateAllCharactersAreDistinct(answer.Numbers)
 		if err != nil {
 			t.Errorf("number %s is not distict", answer.Numbers)
@@ -62,10 +71,24 @@ func TestAnswer(t *testing.T) {
 	})
 
 	t.Run("set input value to answer", func(t *testing.T) {
+		answer := NewAnswer()
 		want := "1234"
 		answer.SetInput(want)
 		if answer.Input != want {
 			t.Errorf("input value does not set, %s", want)
+		}
+	})
+
+	t.Run("judging player's input value", func(t *testing.T) {
+		answer := NewAnswer(1, 2, 3, 4)
+		input := "2139"
+		answer.SetInput(input)
+		answer.Judge()
+		if answer.Strike != 1 {
+			t.Errorf(
+				"number 3 must be counted to strike, Answer is: %s, Strike count: %d",
+				answer.Numbers, answer.Strike,
+			)
 		}
 	})
 }
