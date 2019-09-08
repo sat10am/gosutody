@@ -14,7 +14,8 @@
 
 </details>
 
-<summary>sample</summary>
+<details>
+<summary>190908-7th</summary>
   
 - Dependency Injection
   - DI 를 사용하면, 테스트 친화적이고 범용적인 함수를 작성할 수 있다
