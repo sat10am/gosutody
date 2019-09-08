@@ -81,17 +81,12 @@ func GetPlayerInput(scanner *bufio.Scanner) (string, error) {
 }
 
 func GenerateRandomNumbers() string {
-	numberArray := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+	numberArray := []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
 	rand.Seed(time.Now().UnixNano())
-	numbers := ""
-	for i := 0; i < 4; i++ {
-		rand.Shuffle(len(numberArray), func(i, j int) {
-			numberArray[i], numberArray[j] = numberArray[j], numberArray[i]
-		})
-		numbers += strconv.Itoa(numberArray[0])
-		numberArray = numberArray[1:]
-	}
-	return numbers
+	rand.Shuffle(len(numberArray), func(i, j int) {
+		numberArray[i], numberArray[j] = numberArray[j], numberArray[i]
+	})
+	return strings.Join(numberArray[:4], "")
 }
 
 func main() {
