@@ -15,6 +15,31 @@
 </details>
 
 <details>
+<summary>190922-9th</summary>
+  
+- Concurrency
+  - 여러개의 웹사이트를 비동기적으로 체크하는 CheckWebsites를 만들면서 고루틴의 기본을 배움
+  - 고루틴은 `go`로 선언하고 Go에서 동시성을 다루는 기본 단위이다.
+  - 각각의 웹사이트를 체크하는 프로세스를 고루틴으로 실행하기 위해 익명함수를 사용했다.
+  - 테스트를 PASS했어도 여러번 돌려보면 랜덤하게 PANIC 에러가 뜨는데, 경합(race)이 발생하기 때문
+  - Channel이라는 자료구조를 사용하여 경합을 해결할 수 있다.
+  - race 옵션으로 동시성 코드에서 발생할 수 있는 문제를 디버깅 가능하다.
+  - Make it work, make it right, make it fast
+
+</details>
+
+<details>
+<summary>190915-8th</summary>
+  
+- Mocking
+  - countdown 프로그램을 만들고 timer를 Mocking했다.
+  - 문제를 작게 분할하고 동작하는 프로그램을 먼저 만들어라.
+  - 코드가 어려워서 테스트하기 어렵다고? 테스트하기 좋게 코드를 짜야 한다.
+  - 리팩토링은 코드는 달라도 동작은 같은 것이다.
+  - 테스트의 가치와 리팩토링했을 때의 효과를 항상 염두에 둬야 한다.
+</details>
+
+<details>
 <summary>190908-7th</summary>
   
 - Dependency Injection
