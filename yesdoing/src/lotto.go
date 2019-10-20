@@ -11,9 +11,13 @@ type Lotto struct {
 
 func (l *Lotto) WriteNumbers(numbers []int) error {
 
+	if len(numbers) > 7 {
+		return errors.New("over length")
+	}
+
 	for _, i := range numbers {
 		if i > 45 || i < 1 {
-			return errors.New("custom Error")
+			return errors.New("Number limit over!!")
 		}
 	}
 
