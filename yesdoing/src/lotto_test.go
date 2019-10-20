@@ -36,4 +36,12 @@ func TestGetLottoTicket(t *testing.T) {
 		}
 	})
 
+	t.Run("Input over range Nubmer", func(t *testing.T) {
+		lotto := Lotto{}
+		err := lotto.WriteNumbers([]int{0, 0, 0, 45, 1, 2, 3})
+
+		if err == nil {
+			t.Errorf("error %v", err)
+		}
+	})
 }
